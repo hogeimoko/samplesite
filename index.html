@@ -22,7 +22,7 @@
 		gtag('config', 'UA-148480689-1');
 		</script>
 
-		
+
 		<script>
 		/**
 		* アナリティクスでアウトバウンド リンクのクリックをトラッキングする関数。
@@ -92,6 +92,9 @@
 						</br>
 						
 						<a href="http://example.jp/" onclick="gtag('event', 'login');">ここからログイン</a> 
+						</br>
+
+						<a href="http://www.example.com" onclick="trackOutboundLink('http://www.example.com'); return false;">Check out example.com</a>
 
 
 					</header>
