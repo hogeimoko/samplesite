@@ -82,43 +82,27 @@
 						<p>ああああああああああああああああああああああああああああああああああああああああああああああああああああ</br></br><a href="about.html"><img src="images/a02.jpg" alt="" /></a></br></br>
 						</p>
 
+						<!-- 直接htmlによるイベントトラッキングの設定例 ココカラ-->
+
 						<a href=tel:012-3456-7890 onClick="gtag('event', 'tap', {'event_category': 'tel','event_label': 'reservation'});">電話をかける</a>
 						</br>
 
-						<a href="http://xxxxx/companyprofile.pdf" onClick="gtag('event', click, {'event_category': 'download', 'event_label': 'companyprofile', 'value': '0'});">会社概要のダウンロードはこちら </a>
+						<a href="http://xxx/companyprofile.pdf" onclick="gtag('event', 'click', {'event_category': 'download','event_label': 'companyprofile'});">資料ダウンロードはこちら</a>
 						</br>
 
-						<a href="http://google.com/" onclick="gtag('event', 'アクション', {'event_category': 'カテゴリ','event_label': 'ラベル'});">GOOGLEトップへ</a>
+						<a href="http://google.com/" onclick="gtag('event', 'click', {'event_category': 'externalLink','event_label': 'google'});">GOOGLEトップへ</a>
 						</br>
 
-						<a href="https://www.yahoo.co.jp/" onclick="gtag('event', 'y_banner', {'event_category': 'click', 'event_label': 'img01', 'value': '0'});">Yahoo!へのリンク</a>
+						<a href="https://www.yahoo.co.jp/" onclick="gtag('event', 'y_banner', {'event_category': 'click', 'event_label': 'yahoo'});">Yahoo!へのリンク</a>
 						</br>
 						
-						<a href="http://example.jp/" onclick="gtag('event', 'login');">ここからログイン</a> 
+						<a href="http://example.jp/" onclick="gtag('event', 'login');">ログイン</a> 
 						</br>
 
-						<a href="http://www.example.com" onclick="trackOutboundLink('http://www.example.com'); return false;">Check out example.com</a>
-
+						<!-- 直接htmlによるイベントトラッキングの設定例 ココマデ-->
 
 					</header>
 
-
-						<a href=tel:012-3456-7890 onClick="gtag('event', 'tap', {'event_category': 'tel','event_label': 'reservation'});">電話をかける</a>
-						</br>
-
-						<a href="http://xxxxx/companyprofile.pdf" onClick="gtag('event', click, {'event_category': 'download', 'event_label': 'companyprofile', 'value': '0'});">会社概要のダウンロードはこちら </a>
-						</br>
-
-						<a href="http://google.com/" onclick="gtag('event', 'アクション', {'event_category': 'カテゴリ','event_label': 'ラベル'});">GOOGLEトップへ</a>
-						</br>
-
-						<a href="https://www.yahoo.co.jp/" onclick="gtag('event', 'y_banner', {'event_category': 'click', 'event_label': 'img01', 'value': '0'});">Yahoo!へのリンク</a>
-						</br>
-						
-						<a href="http://example.jp/" onclick="gtag('event', 'login');">ここからログイン</a> 
-						</br>
-
-						<a href="http://www.example.com" onclick="trackOutboundLink('http://www.example.com'); return false;">Check out example.com</a>
 
 
 				<header class="special">
