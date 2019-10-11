@@ -6,13 +6,6 @@
 -->
 <html>
 	<head>
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-TKVKSKB');</script>
-		<!-- End Google Tag Manager -->
 		<title>home</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -21,7 +14,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<!--
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148480689-1"></script>
 		<script>
   		window.dataLayer = window.dataLayer || [];
@@ -29,14 +21,27 @@
   		gtag('js', new Date());
 		gtag('config', 'UA-148480689-1');
 		</script>
-		-->
+
+
+		<script>
+		/**
+		* アナリティクスでアウトバウンド リンクのクリックをトラッキングする関数。
+		* この関数では有効な URL 文字列を引数として受け取り、その URL 文字列を
+		* イベントのラベルとして使用する。transport メソッドを 'beacon' に設定すると
+		* 対応ブラウザでは 'navigator.sendBeacon' を使ってヒットが送信される。
+		*/
+		var trackOutboundLink = function(url) {
+		  gtag('event', 'click', {
+		    'event_category': 'outbound',
+		    'event_label': url,
+		    'transport_type': 'beacon',
+		    'event_callback': function(){document.location = url;}
+		  });
+		}
+		</script>
 
 	</head>
 	<body class="is-preload">
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKVKSKB"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
 
 		<!-- Header -->
 			<header id="header">
@@ -76,7 +81,25 @@
 						<h2>ドライフーズの魅力</h2>
 						<p>ああああああああああああああああああああああああああああああああああああああああああああああああああああ</br></br><a href="about.html"><img src="images/a02.jpg" alt="" /></a></br></br>
 						</p>
+
+						<!-- 直接htmlによるイベントトラッキングの設定例 ココカラ-->
+
+						<a href="#" onclick="gtag('event', 'click', {'event_category': 'testcategory', 'event_label': 'clicktest'});">クリックてすと</a>
+						</br>
+
+						<a href="http://google.com/" onclick="gtag('event', 'click', {'event_category': 'externalLink','event_label': 'google'});">GOOGLEトップへ</a>
+						</br>
+
+						<a href="http://xxx/companyprofile.pdf" onclick="gtag('event', 'click', {'event_category': 'download','event_label': 'companyprofile'});">資料ダウンロードはこちら</a>
+						</br>
+
+						<a href=tel:012-3456-7890 onClick="gtag('event', 'tap', {'event_category': 'tel','event_label': 'reservation'});">電話をかける</a>
+						</br>
+						
+						<!-- 直接htmlによるイベントトラッキングの設定例 ココマデ-->
+
 					</header>
+
 
 
 				<header class="special">
@@ -184,15 +207,15 @@
 			</section>
 
 			<header class="special">
-				<h3>商品をもっと知りたい</h3>
+				<h3>商品をもっと知りたい方はぜひこちらをご覧ください</h3>
 				<input type="button" onclick="location.href='about.html'" value="ドライフーズの魅力をもっと知る" class="primary">
 			</header>
-
 			<header class="special">
 				<h2>お問い合わせ</h2>
-				<p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+				<p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
 				<input type="button" onclick="location.href='#'" value="商品について問い合わせをする" class="primary">
 			</header>
+
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
